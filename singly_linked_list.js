@@ -27,19 +27,22 @@ class LinkedList {
     }
 
     removeFront() {
-        // If the list is empty, nothing to r
+        // If the list is empty, nothing to remove, return null
         if (!this.head) {
             this.head = null;
             return this;
         }
+        // If list is not empty, remove current head and make next node the head
         this.head = this.head.next;
         return this;
     }
 
     front() {
+        // If list is empty, no data to return, return null
         if (!this.head) {
             return null;
         }
+        // If list is not empty, return data of current head node
         return this.head.data;
     }
 }
