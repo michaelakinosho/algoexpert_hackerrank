@@ -45,6 +45,20 @@ class LinkedList {
         // If list is not empty, return data of current head node
         return this.head.data;
     }
+
+    nextnode(next_node) {
+        if (this.front() == null) {
+            return null;
+        }
+        if (!this.head.next) {
+            return null;
+        }
+    }
+
+    findSum() {
+        // We first have to tell our train attendant that we want to start at the front of the train
+        runner = self.
+    }
 }
 
 mySLL = new LinkedList()
