@@ -55,17 +55,44 @@ class LinkedList {
         }
     }
 
+    contains(val){
+        
+        let runner = this.head
+        while(runner !== null) {
+            if(runner.data === val){
+                return true
+            }
+            runner = runner.next
+        }
+        return false
+
+    }
+
     findSum() {
         // We first have to tell our train attendant that we want to start at the front of the train
-        runner = self.
+        let runner = this.head
+        let sum = 0
+        // Since a Linked List does not know how many nodes is within it, we will not be able to use a for loop to iterate, instead we'll use a while
+        // Also we need to tell them when to stop otherwise they will just run off the end of the train
+        while(runner !== null){
+            // Since the runner is set to the current node, its value will be equal to the value of the node they are currently on
+            sum += runner.data
+            // Tell our attendant to move to the next car
+            runner = runner.next
+        }
+        return sum
     }
 }
 
 mySLL = new LinkedList()
+console.log(mySLL.contains(81))
+console.log(mySLL.findSum())
 console.log(mySLL.front())
 mySLL.addFront(27)
 mySLL.addFront(54)
 mySLL.addFront(81)
+console.log(mySLL.contains(81))
+//console.log(mySLL.front())
+//mySLL.removeFront()
 console.log(mySLL.front())
-mySLL.removeFront()
-console.log(mySLL.front())
+console.log(mySLL.findSum())
