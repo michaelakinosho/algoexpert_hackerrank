@@ -56,16 +56,31 @@ class LinkedList {
     }
 
     contains(val){
-        
+        // Initialize variable to hold node
         let runner = this.head
+        // Iterate through list to determine if value exist in any node
         while(runner !== null) {
+            // if found then return true and stop, otherwise eventually return false
             if(runner.data === val){
-                return true
+                return true;
             }
+            runner = runner.next;
+        }
+        return false;
+
+    }
+
+    length() {
+        // Initialize variable to hold node
+        let runner = this.head;
+        // Iterate through list until next node is null
+        let counter = 0
+        while(runner) {
+            // With each pass through the WHILE loop increae counter by one, until next runner is null 
+            counter++
             runner = runner.next
         }
-        return false
-
+        return counter;
     }
 
     findSum() {
@@ -78,9 +93,9 @@ class LinkedList {
             // Since the runner is set to the current node, its value will be equal to the value of the node they are currently on
             sum += runner.data
             // Tell our attendant to move to the next car
-            runner = runner.next
+            runner = runner.next;
         }
-        return sum
+        return sum;
     }
 }
 
@@ -91,6 +106,7 @@ console.log(mySLL.front())
 mySLL.addFront(27)
 mySLL.addFront(54)
 mySLL.addFront(81)
+console.log("Length of Singly Linked List is: ",mySLL.length())
 console.log(mySLL.contains(81))
 //console.log(mySLL.front())
 //mySLL.removeFront()
